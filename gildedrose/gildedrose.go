@@ -45,7 +45,7 @@ func UpdateQuality(items []*Item) {
 						}
 					}
 				} else {
-					item.Quality = item.Quality - item.Quality
+					item.Quality = 0
 				}
 			} else {
 				if item.Quality < 50 {
