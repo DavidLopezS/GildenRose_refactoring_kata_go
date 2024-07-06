@@ -37,3 +37,5 @@ Este `commit` resuelve la redundancia de la línea 48, en la que `item.Quality` 
 Aquí se resuelve otra redundancia en el incremento y decremento del valor de `item.Quality` y `item.SellIn`. Ya que, anteriormente el valor se restaba o sumaba así: `item.Quality = item.Quality + 1`. Siendo en programación (y especialmente en GO) más optimo hacerlo así: `item.Quality++`.
 
 ### Code modulerized into small methods, only the increase and decrease quality parts
+
+En esta actualización del código, he convertido en función partes 
