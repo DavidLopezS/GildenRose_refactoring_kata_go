@@ -17,14 +17,14 @@ func DecreaseItemQuality(item *Item) {
 	}
 }
 
-func QualityModificationLogic(item *Item, isMinusSellIn bool) {
+func QualityModificationLogic(item *Item, isSellInNegative bool) {
 	if item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert" {
 		DecreaseItemQuality(item)
 	} else {
 		IncreaseItemQuality(item)
 		if item.Name == "Backstage passes to a TAFKAL80ETC concert" {
-			if !isMinusSellIn {
-				if item.SellIn < 11 || item.SellIn < 6 {
+			if !isSellInNegative {
+				if item.SellIn < 11 {
 					IncreaseItemQuality(item)
 				}
 			} else {
@@ -36,7 +36,6 @@ func QualityModificationLogic(item *Item, isMinusSellIn bool) {
 
 func UpdateQuality(items []*Item) {
 	for _, item := range items {
-
 		QualityModificationLogic(item, false)
 
 		if item.Name != "Sulfuras, Hand of Ragnaros" {
